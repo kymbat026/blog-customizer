@@ -3,9 +3,13 @@
 }
 
 .container {
-	display: flex;
-	flex-direction: column;
-	row-gap: 4px;
+    display: flex;
+    flex-direction: column;
+    row-gap: 4px;
+}
+
+.container > :first-child:not(.selectWrapper) {
+    line-height: 14px;
 }
 
 .arrow {
@@ -74,11 +78,15 @@
 }
 
 .option[aria-selected='true'] {
-	background-color: rgb(0 0 0 / 5%);
+	background-color: #c4c4c4;
 }
 
 .option:hover {
-	background: var(--grey, #c4c4c4);
+	background-color: #e6e6e6;
+}
+
+.option:active {
+	background-color: #c4c4c4;
 }
 
 @mixin option-color-before {
