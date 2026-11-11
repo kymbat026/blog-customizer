@@ -17,6 +17,7 @@
 	display: flex;
 	flex-shrink: 0;
 	flex-direction: column;
+	gap: 50px;
 	box-sizing: border-box;
 	width: 614px;
 	height: auto;
@@ -26,47 +27,14 @@
 	border-right: 1px solid #000;
 }
 
-.form > :nth-child(5) {
-    margin-top: 50px;
-}
-
 .bottomContainer {
 	display: flex;
 	justify-content: space-between;
 	margin-top: auto;
-	padding-top: 24px;
+	padding-top: 207px;
 }
 
 .bottomContainer > button {
 	width: 180px;
 	height: 48px;
-}
-
-.form > :nth-child(3) {
-    margin-top: 50px;
-}
-
-.form > :nth-child(4) {
-    margin-top: 50px;
-}
-
-.form > :nth-child(6) {
-    margin-top: 0;
-}
-
-.form > :nth-child(7) {
-    margin-top: 50px;
-}
-
-.form > :nth-child(8) {
-    margin-top: 207px;
-}
-
-.title {
-	margin: 0 0 50px;
-	font-family: 'Open Sans', sans-serif;
-	font-size: 31px;
-	font-weight: 800;
-	line-height: 42px;
-	text-transform: uppercase;
 }

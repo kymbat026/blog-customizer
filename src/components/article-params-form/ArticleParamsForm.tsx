@@ -6,17 +6,21 @@ import {
   backgroundColors,
   contentWidthArr,
 } from '@/constants/articleProps';
+import { clsx } from 'clsx';
 import { useEffect, useRef, useState } from 'react';
 import { ArrowButton } from 'src/ui/arrow-button';
 import { Button } from 'src/ui/button';
 import { RadioGroup } from 'src/ui/radio-group';
 import { Select } from 'src/ui/select';
 import { Separator } from 'src/ui/separator';
+import { Text } from 'src/ui/text';
+
+import type { ArticleStateType } from '@/constants/articleProps';
 
 import styles from './ArticleParamsForm.module.scss';
 
 type ArticleParamsFormProps = {
-  onApply: (state: typeof defaultArticleState) => void;
+  onApply: (state: ArticleStateType) => void;
 };
 export const ArticleParamsForm = ({
   onApply,
@@ -31,6 +35,7 @@ export const ArticleParamsForm = ({
   };
   const handleReset = (): void => {
     setFormState(defaultArticleState);
+    onApply(defaultArticleState);
   };
 
   useEffect(() => {
@@ -51,9 +56,15 @@ export const ArticleParamsForm = ({
     <div ref={rootRef}>
       <ArrowButton isOpen={isOpen} onClick={() => setIsOpen(!isOpen)} />
 
-      <aside className={`${styles.container} ${isOpen ? styles.container_open : ''}`}>
+      <aside
+        className={clsx(styles.container, {
+          [styles.container_open]: isOpen,
+        })}
+      >
         <form className={styles.form} onSubmit={handleApply}>
-          <h2 className={styles.title}>ЗАДАЙТЕ ПАРАМЕТРЫ</h2>
+          <Text as="h2" size={31} weight={800} uppercase family="open-sans">
+            Задайте параметры
+          </Text>
           <Select
             title="Шрифт"
             options={fontFamilyOptions}
